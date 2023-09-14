@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MercadoPrivado</string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="location">Location</string>
+    <string name="itemthumbnail">itemThumbnail</string>
+</resources>
