@@ -1,3 +1,4 @@
+import android.content.Intent
 import android.icu.text.NumberFormat
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.lcarera.mercadoprivado.ItemDetail
 import com.lcarera.mercadoprivado.R
 import data.CardItem
 
@@ -27,6 +29,13 @@ class CardAdapter() : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
             .placeholder(R.drawable.ic_search)
             .error(R.mipmap.ic_launcher)
             .into(holder.thumbnail)
+
+        holder.itemView.setOnClickListener {
+            // Redirect to item detail activity
+            val intent = Intent(holder.itemView.context, ItemDetail::class.java)
+            intent.putExtra("id", item.id)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = items.size
